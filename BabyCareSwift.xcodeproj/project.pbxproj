@@ -1,0 +1,135 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		S00000000000000000000001 /* BabyCareSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000001; };
+		S00000000000000000000002 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000002; };
+		S00000000000000000000003 /* BabyCareStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000003; };
+		S00000000000000000000004 /* GlassStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000004; };
+		S00000000000000000000005 /* BabyCareFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000005; };
+		S00000000000000000000006 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000006; };
+		S00000000000000000000007 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000007; };
+		S00000000000000000000008 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000008; };
+		S00000000000000000000009 /* CategoryEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000009; };
+		S00000000000000000000010 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000010; };
+		S00000000000000000000016 /* CareCategorySymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000016; };
+		S00000000000000000000011 /* PremiumSyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000011; };
+		S00000000000000000000012 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000012; };
+		S00000000000000000000013 /* BabyCareAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000013; };
+		S00000000000000000000017 /* PastRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000017; };
+		S00000000000000000000018 /* TimelineRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000018; };
+		S00000000000000000000019 /* BabyCareWidgetSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000019; };
+		S00000000000000000000020 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000002; };
+		S00000000000000000000021 /* GlassStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000004; };
+		S00000000000000000000022 /* BabyCareFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000005; };
+		S00000000000000000000023 /* BabyCareWidgetSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000019; };
+		S00000000000000000000024 /* BabyCareWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = W00000000000000000000001; };
+		S00000000000000000000025 /* BabyCareWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = W00000000000000000000004; };
+		S00000000000000000000014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000014; };
+		S00000000000000000000015 /* BabyCareSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000001; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		PX0000000000000000000001 = {isa = PBXContainerItemProxy; containerPortal = PROJ00000000000000000001; proxyType = 1; remoteGlobalIDString = T00000000000000000000001; remoteInfo = BabyCareSwift; };
+		PX0000000000000000000002 = {isa = PBXContainerItemProxy; containerPortal = PROJ00000000000000000001; proxyType = 1; remoteGlobalIDString = T00000000000000000000003; remoteInfo = BabyCareWidgetExtension; };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A00000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyCareSwiftApp.swift; sourceTree = "<group>"; };
+		A00000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		A00000000000000000000003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyCareStore.swift; sourceTree = "<group>"; };
+		A00000000000000000000004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassStyle.swift; sourceTree = "<group>"; };
+		A00000000000000000000005 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyCareFormatters.swift; sourceTree = "<group>"; };
+		A00000000000000000000006 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		A00000000000000000000007 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		A00000000000000000000008 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A00000000000000000000009 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditorView.swift; sourceTree = "<group>"; };
+		A00000000000000000000010 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
+		A00000000000000000000016 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareCategorySymbolView.swift; sourceTree = "<group>"; };
+		A00000000000000000000011 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumSyncView.swift; sourceTree = "<group>"; };
+		A00000000000000000000012 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A00000000000000000000013 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyCareAnalytics.swift; sourceTree = "<group>"; };
+		A00000000000000000000017 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastRecordView.swift; sourceTree = "<group>"; };
+		A00000000000000000000018 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRowView.swift; sourceTree = "<group>"; };
+		A00000000000000000000019 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyCareWidgetSupport.swift; sourceTree = "<group>"; };
+		E00000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BabyCareSwift.entitlements; sourceTree = "<group>"; };
+		A00000000000000000000014 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A00000000000000000000015 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B00000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyCareSwiftTests.swift; sourceTree = "<group>"; };
+		P00000000000000000000001 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyCareSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		P00000000000000000000002 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabyCareSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		W00000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyCareWidget.swift; sourceTree = "<group>"; };
+		W00000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BabyCareWidgetExtension.entitlements; sourceTree = "<group>"; };
+		W00000000000000000000003 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		W00000000000000000000004 = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; includeInIndex = 0; path = BabyCareWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F00000000000000000000001 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		F00000000000000000000002 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		F00000000000000000000003 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G00000000000000000000001 = {isa = PBXGroup; children = (G00000000000000000000002, G00000000000000000000003, G00000000000000000000004, G00000000000000000000005); sourceTree = "<group>"; };
+		G00000000000000000000002 = {isa = PBXGroup; children = (A00000000000000000000001, A00000000000000000000002, A00000000000000000000003, A00000000000000000000004, A00000000000000000000005, A00000000000000000000006, A00000000000000000000007, A00000000000000000000008, A00000000000000000000009, A00000000000000000000010, A00000000000000000000016, A00000000000000000000011, A00000000000000000000012, A00000000000000000000013, A00000000000000000000017, A00000000000000000000018, A00000000000000000000019, E00000000000000000000001, A00000000000000000000014, A00000000000000000000015); path = BabyCareSwift; sourceTree = "<group>"; };
+		G00000000000000000000003 = {isa = PBXGroup; children = (B00000000000000000000001); path = BabyCareSwiftTests; sourceTree = "<group>"; };
+		G00000000000000000000004 = {isa = PBXGroup; children = (P00000000000000000000001, P00000000000000000000002, W00000000000000000000004); name = Products; sourceTree = "<group>"; };
+		G00000000000000000000005 = {isa = PBXGroup; children = (W00000000000000000000001, W00000000000000000000002, W00000000000000000000003); path = BabyCareWidgetExtension; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		T00000000000000000000001 = {isa = PBXNativeTarget; buildConfigurationList = CL00000000000000000000002; buildPhases = (SO0000000000000000000001, F00000000000000000000001, C00000000000000000000001, R00000000000000000000001); buildRules = (); dependencies = (D00000000000000000000002); name = BabyCareSwift; productName = BabyCareSwift; productReference = P00000000000000000000001; productType = "com.apple.product-type.application"; };
+		T00000000000000000000002 = {isa = PBXNativeTarget; buildConfigurationList = CL00000000000000000000003; buildPhases = (SO0000000000000000000002, F00000000000000000000002, R00000000000000000000002); buildRules = (); dependencies = (D00000000000000000000001); name = BabyCareSwiftTests; productName = BabyCareSwiftTests; productReference = P00000000000000000000002; productType = "com.apple.product-type.bundle.unit-test"; };
+		T00000000000000000000003 = {isa = PBXNativeTarget; buildConfigurationList = CL00000000000000000000004; buildPhases = (SO0000000000000000000003, F00000000000000000000003, R00000000000000000000003); buildRules = (); dependencies = (); name = BabyCareWidgetExtension; productName = BabyCareWidgetExtension; productReference = W00000000000000000000004; productType = "com.apple.product-type.app-extension"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PROJ00000000000000000001 = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2630; LastUpgradeCheck = 2630; TargetAttributes = {T00000000000000000000001 = {CreatedOnToolsVersion = 26.3; }; T00000000000000000000002 = {CreatedOnToolsVersion = 26.3; TestTargetID = T00000000000000000000001; }; T00000000000000000000003 = {CreatedOnToolsVersion = 26.3; }; }; }; buildConfigurationList = CL00000000000000000000001; compatibilityVersion = "Xcode 16.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = G00000000000000000000001; productRefGroup = G00000000000000000000004; projectDirPath = ""; projectRoot = ""; targets = (T00000000000000000000001, T00000000000000000000002, T00000000000000000000003); };
+/* End PBXProject section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C00000000000000000000001 = {isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; dstPath = ""; dstSubfolderSpec = 13; files = (S00000000000000000000025,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		R00000000000000000000001 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (S00000000000000000000014); runOnlyForDeploymentPostprocessing = 0; };
+		R00000000000000000000002 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		R00000000000000000000003 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SO0000000000000000000001 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (S00000000000000000000001, S00000000000000000000002, S00000000000000000000003, S00000000000000000000004, S00000000000000000000005, S00000000000000000000006, S00000000000000000000007, S00000000000000000000008, S00000000000000000000009, S00000000000000000000010, S00000000000000000000016, S00000000000000000000011, S00000000000000000000012, S00000000000000000000013, S00000000000000000000017, S00000000000000000000018, S00000000000000000000019); runOnlyForDeploymentPostprocessing = 0; };
+		SO0000000000000000000002 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (S00000000000000000000015); runOnlyForDeploymentPostprocessing = 0; };
+		SO0000000000000000000003 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (S00000000000000000000020, S00000000000000000000021, S00000000000000000000022, S00000000000000000000023, S00000000000000000000024); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D00000000000000000000001 = {isa = PBXTargetDependency; target = T00000000000000000000001; targetProxy = PX0000000000000000000001; };
+		D00000000000000000000002 = {isa = PBXTargetDependency; target = T00000000000000000000003; targetProxy = PX0000000000000000000002; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CD00000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; GCC_OPTIMIZATION_LEVEL = 0; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; }; name = Debug; };
+		CR00000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; ENABLE_NS_ASSERTIONS = NO; GCC_C_LANGUAGE_STANDARD = gnu17; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; VALIDATE_PRODUCT = YES; }; name = Release; };
+		AD00000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_ENTITLEMENTS = BabyCareSwift/BabyCareSwift.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 10; DEVELOPMENT_TEAM = W5J6GLQ9QX; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = BabyCareSwift/Info.plist; MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = com.soulinmyhouse.babycare.swift; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1"; }; name = Debug; };
+		AR00000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_ENTITLEMENTS = BabyCareSwift/BabyCareSwift.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 10; DEVELOPMENT_TEAM = W5J6GLQ9QX; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = BabyCareSwift/Info.plist; MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = com.soulinmyhouse.babycare.swift; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1"; }; name = Release; };
+		TD00000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; PRODUCT_BUNDLE_IDENTIFIER = com.soulinmyhouse.babycare.swift.tests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1"; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BabyCareSwift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BabyCareSwift"; }; name = Debug; };
+		TR00000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; PRODUCT_BUNDLE_IDENTIFIER = com.soulinmyhouse.babycare.swift.tests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1"; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BabyCareSwift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BabyCareSwift"; }; name = Release; };
+		WD00000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {APPLICATION_EXTENSION_API_ONLY = YES; CODE_SIGN_ENTITLEMENTS = BabyCareWidgetExtension/BabyCareWidgetExtension.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 10; DEVELOPMENT_TEAM = W5J6GLQ9QX; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = BabyCareWidgetExtension/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = com.soulinmyhouse.babycare.swift.widget; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1"; }; name = Debug; };
+		WR00000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {APPLICATION_EXTENSION_API_ONLY = YES; CODE_SIGN_ENTITLEMENTS = BabyCareWidgetExtension/BabyCareWidgetExtension.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 10; DEVELOPMENT_TEAM = W5J6GLQ9QX; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = BabyCareWidgetExtension/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = com.soulinmyhouse.babycare.swift.widget; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1"; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CL00000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (CD00000000000000000000001, CR00000000000000000000001); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		CL00000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (AD00000000000000000000001, AR00000000000000000000001); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		CL00000000000000000000003 = {isa = XCConfigurationList; buildConfigurations = (TD00000000000000000000001, TR00000000000000000000001); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		CL00000000000000000000004 = {isa = XCConfigurationList; buildConfigurations = (WD00000000000000000000001, WR00000000000000000000001); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = PROJ00000000000000000001;
+}
