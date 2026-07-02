@@ -67,14 +67,18 @@ struct PastRecordView: View {
 
                 Spacer()
 
-                Button {
-                    shiftMonth(by: 1)
-                } label: {
-                    Image(systemName: "chevron.right")
-                        .font(.headline.weight(.semibold))
-                        .frame(width: 34, height: 34)
+                if !isCurrentMonth {
+                    Button {
+                        shiftMonth(by: 1)
+                    } label: {
+                        Image(systemName: "chevron.right")
+                            .font(.headline.weight(.semibold))
+                            .frame(width: 34, height: 34)
+                    }
+                    .buttonStyle(.plain)
+                } else {
+                    Color.clear.frame(width: 34, height: 34)
                 }
-                .buttonStyle(.plain)
             }
 
             weekdayHeader
@@ -208,6 +212,10 @@ struct PastRecordView: View {
                     shiftMonth(by: -1)
                 }
             }
+    }
+
+    private var isCurrentMonth: Bool {
+        calendar.isDate(displayedMonth, equalTo: Date(), toGranularity: .month)
     }
 
     private func calendarGridDays() -> [Date?] {

@@ -411,9 +411,6 @@ private struct AmountDial: View {
             Text(unit.rawValue)
                 .font(.headline)
                 .foregroundStyle(.secondary)
-            Text("좌우로 스와이프해서 조절")
-                .font(.caption)
-                .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 22)
