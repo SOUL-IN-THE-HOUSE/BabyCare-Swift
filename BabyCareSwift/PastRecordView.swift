@@ -92,7 +92,7 @@ struct PastRecordView: View {
         .padding(16)
         .glassCard()
         .contentShape(Rectangle())
-        .simultaneousGesture(monthSwipeGesture)
+        .highPriorityGesture(monthSwipeGesture)
     }
 
     private var weekdayHeader: some View {

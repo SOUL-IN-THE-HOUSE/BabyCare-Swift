@@ -4,6 +4,7 @@ struct OnboardingView: View {
     @EnvironmentObject private var store: BabyCareStore
     @State private var babyName = ""
     @State private var birthDate = Calendar.current.date(byAdding: .day, value: -30, to: Date()) ?? Date()
+    @FocusState private var babyNameFocused: Bool
 
     var body: some View {
         ZStack {
@@ -20,7 +21,12 @@ struct OnboardingView: View {
 
                 VStack(spacing: 16) {
                     TextField("아기 이름", text: $babyName)
+                        .focused($babyNameFocused)
                         .textInputAutocapitalization(.never)
+                        .submitLabel(.done)
+                        .onSubmit {
+                            babyNameFocused = false
+                        }
                         .padding(14)
                         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
 
@@ -40,6 +46,9 @@ struct OnboardingView: View {
                 .controlSize(.large)
             }
             .padding(24)
+            .simultaneousGesture(TapGesture().onEnded {
+                babyNameFocused = false
+            })
         }
     }
 }

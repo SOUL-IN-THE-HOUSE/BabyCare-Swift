@@ -9,6 +9,7 @@ struct RecordView: View {
     @State private var draftNote = ""
     @State private var draftDate = Date()
     @State private var activeCategory: CareCategory?
+    @FocusState private var noteFocused: Bool
 
     var body: some View {
         NavigationStack {
@@ -47,6 +48,9 @@ struct RecordView: View {
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
             }
+            .simultaneousGesture(TapGesture().onEnded {
+                noteFocused = false
+            })
             .onChange(of: selectedEntry?.id) { _, newValue in
                 if newValue == nil {
                     activeCategory = nil
@@ -289,6 +293,7 @@ private struct EntryEditSheet: View {
     @Binding var date: Date
     let onSave: () -> Void
     @Environment(\.dismiss) private var dismiss
+    @FocusState private var noteFocused: Bool
 
     var body: some View {
         NavigationStack {
@@ -349,6 +354,11 @@ private struct EntryEditSheet: View {
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(.secondary)
                         TextField("메모", text: $note, axis: .vertical)
+                            .focused($noteFocused)
+                            .submitLabel(.done)
+                            .onSubmit {
+                                noteFocused = false
+                            }
                             .lineLimit(3...6)
                             .padding(14)
                             .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -359,6 +369,9 @@ private struct EntryEditSheet: View {
                 .padding(.bottom, 100)
             }
             .background(GlassBackground())
+            .simultaneousGesture(TapGesture().onEnded {
+                noteFocused = false
+            })
             .safeAreaInset(edge: .bottom) {
                 Button {
                     onSave()

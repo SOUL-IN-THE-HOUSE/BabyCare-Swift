@@ -6,11 +6,7 @@ struct BabyCareSwiftApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                RootTabView()
-                KeyboardDismissTapInstaller()
-                    .frame(width: 0, height: 0)
-            }
+            RootTabView()
             .environmentObject(store)
         }
     }

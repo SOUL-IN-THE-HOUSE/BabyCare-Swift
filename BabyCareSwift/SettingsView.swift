@@ -79,6 +79,7 @@ private struct BabyProfileEditorView: View {
     let field: BabyProfileField
     @State private var babyName: String
     @State private var birthDate: Date
+    @FocusState private var babyNameFocused: Bool
 
     init(field: BabyProfileField) {
         self.field = field
@@ -93,7 +94,12 @@ private struct BabyProfileEditorView: View {
                 Section("아기 정보") {
                     if field == .name {
                         TextField("아기 이름", text: $babyName)
+                            .focused($babyNameFocused)
                             .textInputAutocapitalization(.never)
+                            .submitLabel(.done)
+                            .onSubmit {
+                                babyNameFocused = false
+                            }
                     } else {
                         DatePicker("출생일", selection: $birthDate, in: ...Date(), displayedComponents: .date)
                             .datePickerStyle(.compact)
@@ -101,6 +107,9 @@ private struct BabyProfileEditorView: View {
                 }
             }
             .navigationTitle(field.title)
+            .simultaneousGesture(TapGesture().onEnded {
+                babyNameFocused = false
+            })
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("취소") {
