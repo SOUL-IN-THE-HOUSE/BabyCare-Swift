@@ -28,18 +28,21 @@ struct TimelineRowView: View {
             .frame(width: 94, alignment: .trailing)
 
             HStack(alignment: .top, spacing: 12) {
-                CareCategorySymbolView(category: CareCategory(
-                    id: entry.categoryId,
-                    title: entry.categoryTitle,
-                    symbolName: entry.symbolName,
-                    tintHex: entry.tintHex,
-                    unit: entry.unit,
-                    isEnabled: true,
-                    isDefault: true
-                ))
-                .foregroundStyle(entry.tintColor)
+                ZStack {
+                    Circle()
+                        .fill(entry.tintColor.opacity(0.12))
+                    CareCategorySymbolView(category: CareCategory(
+                        id: entry.categoryId,
+                        title: entry.categoryTitle,
+                        symbolName: entry.symbolName,
+                        tintHex: entry.tintHex,
+                        unit: entry.unit,
+                        isEnabled: true,
+                        isDefault: true
+                    ))
+                    .foregroundStyle(entry.tintColor)
+                }
                 .frame(width: 30, height: 30)
-                .background(entry.tintColor.opacity(0.12), in: Circle())
 
                 VStack(alignment: .leading, spacing: 5) {
                     HStack(spacing: 6) {
