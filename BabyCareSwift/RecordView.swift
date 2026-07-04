@@ -231,7 +231,7 @@ struct RecordView: View {
             }
         }
         .padding(16)
-        .glassCard()
+        .flatGlassCard()
     }
 
     private func record(_ category: CareCategory) {

@@ -44,7 +44,7 @@ struct PastRecordView: View {
             }
         }
         .padding(16)
-        .glassCard()
+        .flatGlassCard()
         .contentShape(Rectangle())
     }
 
@@ -90,7 +90,7 @@ struct PastRecordView: View {
             }
         }
         .padding(16)
-        .glassCard()
+        .flatGlassCard()
         .contentShape(Rectangle())
         .highPriorityGesture(monthSwipeGesture)
     }
@@ -183,7 +183,7 @@ struct PastRecordView: View {
             }
         }
         .padding(16)
-        .glassCard()
+        .flatGlassCard()
     }
 
     private func shiftMonth(by value: Int) {

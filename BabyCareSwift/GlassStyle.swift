@@ -31,6 +31,17 @@ extension View {
     func glassCard() -> some View {
         modifier(GlassCard())
     }
+
+    func flatGlassCard(cornerRadius: CGFloat = 18) -> some View {
+        background(
+            .ultraThinMaterial,
+            in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                .stroke(.white.opacity(0.48), lineWidth: 1)
+        }
+    }
 }
 
 extension CareCategory {

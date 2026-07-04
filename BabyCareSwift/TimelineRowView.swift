@@ -70,7 +70,7 @@ struct TimelineRowView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(12)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .flatGlassCard(cornerRadius: 14)
     }
 
     private var timePeriodText: String {
