@@ -21,9 +21,6 @@ struct TimelineRowView: View {
                 .monospacedDigit()
                 .frame(width: 82, alignment: .trailing)
 
-                Text(BabyCareFormatters.relativeTime(from: entry.date))
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
             }
             .frame(width: 94, alignment: .trailing)
 
