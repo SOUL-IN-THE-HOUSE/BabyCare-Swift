@@ -178,6 +178,13 @@ struct PastRecordView: View {
                 VStack(spacing: 10) {
                     ForEach(entries) { entry in
                         TimelineRowView(entry: entry)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                Button(role: .destructive) {
+                                    store.deleteEntry(entry)
+                                } label: {
+                                    Label("삭제", systemImage: "trash")
+                                }
+                            }
                     }
                 }
             }
