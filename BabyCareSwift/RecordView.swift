@@ -19,6 +19,7 @@ struct RecordView: View {
                 ScrollView {
                     VStack(spacing: 14) {
                         profileHeader
+                        careInsightCard
                         categoryScroller
                         timeline
                     }
@@ -116,6 +117,27 @@ struct RecordView: View {
         .frame(maxWidth: .infinity)
         .padding(.top, 2)
         .padding(.bottom, 4)
+    }
+
+    private var careInsightCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Label(isTodaySelected ? "오늘 체크" : "선택일 체크", systemImage: "checklist.checked")
+                    .font(.headline)
+                Spacer()
+                Text("\(entriesForSelectedDate.count)개 기록")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 138), spacing: 14)], alignment: .leading, spacing: 12) {
+                ForEach(careInsightItems) { item in
+                    CareInsightItemView(item: item)
+                }
+            }
+        }
+        .padding(16)
+        .flatGlassCard()
     }
 
     private var categoryScroller: some View {
@@ -259,6 +281,125 @@ struct RecordView: View {
         Array(store.entries(on: selectedDate).sorted { $0.date > $1.date }.prefix(30))
     }
 
+    private var entriesForSelectedDate: [CareEntry] {
+        store.entries(on: selectedDate)
+    }
+
+    private var careInsightItems: [CareInsightItem] {
+        let entries = entriesForSelectedDate
+        let feedEntries = entries.filter { ["모유", "분유"].contains($0.categoryTitle) }
+        let formulaEntries = entries.filter { $0.categoryTitle == "분유" }
+        let sleepEntries = entries.filter { $0.categoryTitle == "수면" }
+        let diaperEntries = entries.filter { $0.categoryTitle == "기저귀" }
+        let memoCount = entries.filter { !$0.note.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }.count
+
+        return [
+            feedInsight(from: feedEntries),
+            formulaInsight(from: formulaEntries),
+            sleepInsight(from: sleepEntries),
+            diaperInsight(from: diaperEntries),
+            memoInsight(count: memoCount),
+            latestInsight(from: entries)
+        ]
+    }
+
+    private func feedInsight(from entries: [CareEntry]) -> CareInsightItem {
+        guard let last = entries.map(\.date).max() else {
+            return CareInsightItem(
+                title: "수유",
+                value: "기록 없음",
+                detail: "모유/분유 기록 필요",
+                systemImage: "drop.fill",
+                tint: Color(hex: "F08BA8")
+            )
+        }
+
+        let total = entries.compactMap(\.amount).reduce(0, +)
+        return CareInsightItem(
+            title: "수유",
+            value: "\(entries.count)회 · \(total)ml",
+            detail: "마지막 \(BabyCareFormatters.relativeTime(from: last))",
+            systemImage: "drop.fill",
+            tint: Color(hex: "F08BA8")
+        )
+    }
+
+    private func formulaInsight(from entries: [CareEntry]) -> CareInsightItem {
+        guard let last = entries.map(\.date).max() else {
+            return CareInsightItem(
+                title: "분유",
+                value: "0회",
+                detail: "총량 0ml",
+                systemImage: "bottle.fill",
+                tint: Color(hex: "D37B4A")
+            )
+        }
+
+        let total = entries.compactMap(\.amount).reduce(0, +)
+        return CareInsightItem(
+            title: "분유",
+            value: "\(entries.count)회 · \(total)ml",
+            detail: "마지막 \(BabyCareFormatters.relativeTime(from: last))",
+            systemImage: "bottle.fill",
+            tint: Color(hex: "D37B4A")
+        )
+    }
+
+    private func sleepInsight(from entries: [CareEntry]) -> CareInsightItem {
+        let minutes = entries.compactMap(\.amount).reduce(0, +)
+        let hours = minutes / 60
+        let remainder = minutes % 60
+        let value = hours > 0 ? "\(hours)시간 \(remainder)분" : "\(minutes)분"
+
+        return CareInsightItem(
+            title: "수면",
+            value: entries.isEmpty ? "기록 없음" : value,
+            detail: entries.isEmpty ? "낮잠/밤잠 기록 필요" : "\(entries.count)회 기록",
+            systemImage: "moon.zzz.fill",
+            tint: Color(hex: "5E7DBA")
+        )
+    }
+
+    private func diaperInsight(from entries: [CareEntry]) -> CareInsightItem {
+        CareInsightItem(
+            title: "기저귀",
+            value: "\(entries.count)회",
+            detail: entries.isEmpty ? "아직 기록 없음" : "교체 기록됨",
+            systemImage: "heart.text.square.fill",
+            tint: Color(hex: "6D8896")
+        )
+    }
+
+    private func memoInsight(count: Int) -> CareInsightItem {
+        CareInsightItem(
+            title: "메모",
+            value: "\(count)개",
+            detail: count == 0 ? "특이사항 없음" : "확인할 메모 있음",
+            systemImage: "note.text",
+            tint: .secondary
+        )
+    }
+
+    private func latestInsight(from entries: [CareEntry]) -> CareInsightItem {
+        guard let latest = entries.max(by: { $0.date < $1.date }) else {
+            return CareInsightItem(
+                title: "마지막 기록",
+                value: "-",
+                detail: "기록을 시작하세요",
+                systemImage: "clock",
+                tint: .secondary
+            )
+        }
+
+        return CareInsightItem(
+            title: "마지막 기록",
+            value: latest.categoryTitle,
+            detail: BabyCareFormatters.time.string(from: latest.date),
+            systemImage: latest.symbolName,
+            tint: latest.tintColor
+        )
+    }
+
     private func shiftDay(by value: Int) {
         guard let nextDate = Calendar.current.date(byAdding: .day, value: value, to: selectedDate) else { return }
         let todayStart = Calendar.current.startOfDay(for: Date())
@@ -283,6 +424,44 @@ struct RecordView: View {
         combined.minute = timeComponents.minute
         combined.second = timeComponents.second
         return calendar.date(from: combined) ?? date
+    }
+}
+
+private struct CareInsightItem: Identifiable {
+    let id = UUID()
+    let title: String
+    let value: String
+    let detail: String
+    let systemImage: String
+    let tint: Color
+}
+
+private struct CareInsightItemView: View {
+    let item: CareInsightItem
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 10) {
+            Image(systemName: item.systemImage)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(item.tint)
+                .frame(width: 22, height: 22)
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(item.title)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                Text(item.value)
+                    .font(.subheadline.weight(.bold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.78)
+                Text(item.detail)
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.78)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
